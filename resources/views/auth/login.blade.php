@@ -29,7 +29,7 @@
 				<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3">
 					<div class="col mx-auto">
 						<div class="mb-4 text-center">
-							<h1>Corporate</h1>
+                            <img src="{{ url('frontend/assets/img/favicon.png') }}" alt="{{ config('app.name') }}">
 						</div>
 						<div class="card">
 							<div class="card-body">
@@ -74,7 +74,7 @@
 													<label class="form-check-label" for="flexSwitchCheckChecked">Remember Me</label>
 												</div>
 											</div>
-											<div class="col-md-6 text-end">	<a href="authentication-forgot-password.html">Forgot Password ?</a>
+											<div class="col-md-6 text-end">	<a href="{{ route('password.request') }}">Forgot Password ?</a>
 											</div>
 											<div class="col-12">
 												<div class="d-grid">

@@ -6,23 +6,27 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--favicon-->
-	<link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+	<link rel="icon" href="{{ asset('backend/assets/images/favicon-32x32.png') }}" type="image/png" />
 	<!--plugins-->
 	<link href="{{ asset('backend/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet"/>
 	<link href="{{ asset('backend/assets/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('backend/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
 	<link href="{{ asset('backend/assets/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
-	<!-- loader-->
+	@yield('data_table_css')
+    <!-- loader-->
 	<link href="{{ asset('backend/assets/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{ asset('backend/assets/js/pace.min.js') }}"></script>
+
 	<!-- Bootstrap CSS -->
 	<link href="{{ asset('backend/assets/css/bootstrap.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('backend/assets/css/app.css') }}" rel="stylesheet">
 	<link href="{{ asset('backend/assets/css/icons.css') }}" rel="stylesheet">
+    <link href="{{ asset('backend/assets/css/toastr.min.css') }}" rel="stylesheet">
 	<!-- Theme Style CSS -->
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/dark-theme.css') }}" />
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/semi-dark.css') }}" />
 	<link rel="stylesheet" href="{{ asset('backend/assets/css/header-colors.css') }}" />
+    @section('data_table_css')
 	<title>{{ config('app.name') }}</title>
 </head>
 
@@ -38,85 +42,7 @@
 		<!--start page wrapper -->
 		<div class="page-wrapper">
 			<div class="page-content">
-
-					<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4">
-						<div class="col">
-							<div class="card radius-10 bg-gradient-deepblue">
-							 <div class="card-body">
-								<div class="d-flex align-items-center">
-									<h5 class="mb-0 text-white">9526</h5>
-									<div class="ms-auto">
-                                        <i class='bx bx-cart fs-3 text-white'></i>
-									</div>
-								</div>
-								<div class="progress my-3 bg-light-transparent" style="height:3px;">
-									<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<div class="d-flex align-items-center text-white">
-									<p class="mb-0">Total Orders</p>
-									<p class="mb-0 ms-auto">+4.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-								</div>
-							</div>
-						  </div>
-						</div>
-						<div class="col">
-							<div class="card radius-10 bg-gradient-orange">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<h5 class="mb-0 text-white">$8323</h5>
-									<div class="ms-auto">
-                                        <i class='bx bx-dollar fs-3 text-white'></i>
-									</div>
-								</div>
-								<div class="progress my-3 bg-light-transparent" style="height:3px;">
-									<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<div class="d-flex align-items-center text-white">
-									<p class="mb-0">Total Revenue</p>
-									<p class="mb-0 ms-auto">+1.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-								</div>
-							</div>
-						  </div>
-						</div>
-						<div class="col">
-							<div class="card radius-10 bg-gradient-ohhappiness">
-							<div class="card-body">
-								<div class="d-flex align-items-center">
-									<h5 class="mb-0 text-white">6200</h5>
-									<div class="ms-auto">
-                                        <i class='bx bx-group fs-3 text-white'></i>
-									</div>
-								</div>
-								<div class="progress my-3 bg-light-transparent" style="height:3px;">
-									<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<div class="d-flex align-items-center text-white">
-									<p class="mb-0">Visitors</p>
-									<p class="mb-0 ms-auto">+5.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-								</div>
-							</div>
-						</div>
-						</div>
-						<div class="col">
-							<div class="card radius-10 bg-gradient-ibiza">
-							 <div class="card-body">
-								<div class="d-flex align-items-center">
-									<h5 class="mb-0 text-white">5630</h5>
-									<div class="ms-auto">
-                                        <i class='bx bx-envelope fs-3 text-white'></i>
-									</div>
-								</div>
-								<div class="progress my-3 bg-light-transparent" style="height:3px;">
-									<div class="progress-bar bg-white" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<div class="d-flex align-items-center text-white">
-									<p class="mb-0">Messages</p>
-									<p class="mb-0 ms-auto">+2.2%<span><i class='bx bx-up-arrow-alt'></i></span></p>
-								</div>
-							</div>
-						 </div>
-						</div>
-					</div><!--end row-->
+                @yield('master')
 			</div>
 		</div>
 		<!--end page wrapper -->
@@ -144,14 +70,118 @@
 	<script src="{{ asset('backend/assets/plugins/sparkline-charts/jquery.sparkline.min.js') }}"></script>
 	<script src="{{ asset('backend/assets/plugins/jquery-knob/excanvas.js') }}"></script>
 	<script src="{{ asset('backend/assets/plugins/jquery-knob/jquery.knob.js') }}"></script>
+    <script src="{{ asset('backend/assets/js/toastr.min.js') }}"></script>
 	  <script>
 		  $(function() {
 			  $(".knob").knob();
 		  });
+          alert
+          @if (Session::has('message'))
+            var type="{{ Session::get('alert-type','info') }}"
+            switch (type) {
+                case 'info':
+                    // toastr.info("{{ Session::get('message') }}");
+                    toastr["success"]("{{ Session::get('message') }}")
+                    toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "100",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+                    break;
+                case 'success':
+                    toastr["success"]("{{ Session::get('message') }}")
+                    toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+
+                    break;
+                case 'warning':
+                    toastr.warning("{{ Session::get('message') }}");
+                    toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+                    break;
+                case 'error':
+                    toastr.error("{{ Session::get('message') }}");
+                    toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": true,
+                    "positionClass": "toast-top-right",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                    }
+                    break;
+            }
+
+          @endif
+
 	  </script>
+      <script type="text/javascript">
+            $(document).ready(function(){
+                $('#image').change(function(e){
+                    var reader =new FileReader();
+                    reader.onload = function(e){
+                        $('#showImage').attr('src',e.target.result);
+                    }
+                    reader.readAsDataURL(e.target.files['0']);
+                })
+
+            })
+        </script>
 	  <script src="{{ asset('backend/assets/js/index.js') }}"></script>
 	<!--app JS-->
 	<script src="{{ asset('backend/assets/js/app.js') }}"></script>
+    @yield('data_table_js')
 </body>
 
 </html>

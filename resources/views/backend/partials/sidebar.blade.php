@@ -18,16 +18,18 @@
             <a href="javascript:;" class="has-arrow">
                 <div class="parent-icon"><i class="bx bx-category"></i>
                 </div>
-                <div class="menu-title">Site Administration</div>
+                <div class="menu-title">Content Management</div>
             </a>
             <ul>
-                <li> <a href="app-emailbox.html"><i class="bx bx-right-arrow-alt"></i>Showcase</a>
+                <li> <a href="{{ route('backend.showcase') }}"><i class="bx bx-right-arrow-alt"></i>Showcase</a>
                 </li>
-                <li> <a href="app-chat-box.html"><i class="bx bx-right-arrow-alt"></i>Story</a>
+                <li> <a href="{{ route('backend.story') }}"><i class="bx bx-right-arrow-alt"></i>Story</a>
                 </li>
-                <li> <a href="app-file-manager.html"><i class="bx bx-right-arrow-alt"></i>Services</a>
+                <li> <a href="{{ route('backend.list.service') }}"><i class="bx bx-right-arrow-alt"></i>Services</a>
                 </li>
-                <li> <a href="app-contact-list.html"><i class="bx bx-right-arrow-alt"></i>Pricing</a>
+                <li> <a href="{{ route('backend.list.pricing') }}"><i class="bx bx-right-arrow-alt"></i>Pricing</a>
+                </li>
+                <li> <a href="{{ route('cta') }}"><i class="bx bx-right-arrow-alt"></i>Call to Action</a>
                 </li>
             </ul>
         </li>

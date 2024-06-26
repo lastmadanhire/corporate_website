@@ -1,20 +1,9 @@
 
-
-/*** Callback ***/
-.callback {
-    position: relative;
+#rounded-section-btn{
+    border-radius: 25px;
+    border: 2px solid #0D6EFD;
 }
 
-.callback::before {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 50%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(rgba(53, 94, 252, .95), rgba(53, 94, 252, .95)), url('{{asset("frontend/assets/img/bg.png")}}');
-    z-index: -1;
-}
 /* Story section */
 #story {
     background-color: #fafafa;
@@ -23,7 +12,38 @@
     background-color: #f0f0f0;
     height: 100px !important;
 }
+.nav-tabs{
+    background-color: #aaa7a7;
+}
+#story .nav-link .active{
+    color: #0D6EFD;
+}
 /* Pricing section */
 #pricing {
     background-color: #fafafa;
+}
+#pricing-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.pricing-card-price {
+    font-size: 3rem;
+}
+
+
+/* cta-section */
+.cta-section{
+    background-image: url("../img/cta.png");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.cta-section .btn{
+    border: 1px solid white;
+}
+/* services */
+#service-icon-section {
+    background-color: red;
+    height: 80px;
+    width: 80px;
+    border-radius: 80px;
 }
